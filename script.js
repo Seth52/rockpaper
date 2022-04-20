@@ -40,11 +40,25 @@ function computerPlay(){
     
     else {return "Scissors";}
     }
+
+    /* 
+    Write a function that plays a single round of Rock Paper Scissors. 
+    The function should take two parameters the playerSelection and 
+    computerSelection - 
+    and then return a string that declares the 
+    winner of the round like so: "You Lose! Paper beats Rock"
+Make your function’s playerSelection parameter case-insensitive 
+    so users can input rock, ROCK, RocK or any other variation.*/
     
+ /* First we need an input from user - allow case-insensitve
+    store input from user
+    compare input with computer generated
+    decide who won
+ */
 
+let playerSelection = prompt("Choose rock, paper, or scissors and input your choice.")
 
-
-
+let test = playerSelection.toLowerCase();
 
 
 
