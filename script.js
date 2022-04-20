@@ -29,17 +29,20 @@ first make a program that randomly returns rock, paper, scissors
 
 */ 
 
-
-
+let computerSelection=computerPlay();
+let test ="";
 function computerPlay(){
    let x= Math.floor(Math.random() * 3) + 1;
+ 
    if (x===1){
-       return "Rock";}
+       return "rock";}
+
     else if(x===2){
-        return "Paper";}
+         return "paper";}
     
-    else {return "Scissors";}
+    else {return "scissors";}
     }
+
 
     /* 
     Write a function that plays a single round of Rock Paper Scissors. 
@@ -56,11 +59,59 @@ Make your function’s playerSelection parameter case-insensitive
     decide who won
  */
 
-let playerSelection = prompt("Choose rock, paper, or scissors and input your choice.")
+    let playerSelection = prompt("Choose rock, paper, or scissors and input your choice.").toLowerCase();
 
-let test = playerSelection.toLowerCase();
+   
+    
+    function playRound(playerSelection, computerSelection){
+            if (playerSelection===computerSelection){
+            return "It's a tie"}
+    
+            else if (playerSelection === "rock" && computerSelection ==="paper"){
+            return "You lose";}
+            
+            else if (playerSelection === "rock" && computerSelection === "scissors"){
+                return "You win";}
+                
+                  
+            else if (playerSelection ==="paper" && computerSelection==="paper"){
+                    return "tie";}    
+            else if (playerSelection === "paper" && computerSelection==="rock"){
+             return "you win";}
+            else if (playerSelection ==="paper" && computerSelection ==="scissors"){
+                return "you lose";
+            }
+             else if (playerSelection ==="scissors" && computerSelection==="scissors"){
+                 return "you tie";
+             }
+             else if (playerSelection ==="scissors" && computerSelection ==="rock"){
+                 return "you lose";
+             }
+             else {return "you win";}
+             
+                }
 
 
+     /*Write a NEW function called game(). Call the playRound function
+      inside of this one to play a 5 round game that keeps score and 
+      reports a winner or loser at the end.Remember loops? 
+      This is a great opportunity to use one to play those five rounds:
+*/
+/*  need to figure out how to keep track of wins
+so program needs to run
+then a win needs to be allotted
+then whoever has 3 wins -- wins 
+output result */
+
+function game(){
+    for( let i = 0; i <5; i++){
+        playRound()
+    }
+
+
+}
+
+}
 
 
 
