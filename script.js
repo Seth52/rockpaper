@@ -29,8 +29,9 @@ first make a program that randomly returns rock, paper, scissors
 
 */ 
 
-let computerSelection=computerPlay();
-let test ="";
+let computerSelection;
+
+
 function computerPlay(){
    let x= Math.floor(Math.random() * 3) + 1;
  
@@ -59,35 +60,25 @@ Make your function’s playerSelection parameter case-insensitive
     decide who won
  */
 
-    let playerSelection = prompt("Choose rock, paper, or scissors and input your choice.").toLowerCase();
+    let playerSelection;
+   
 
    
     
     function playRound(playerSelection, computerSelection){
-            if (playerSelection===computerSelection){
-            return "It's a tie"}
-    
-            else if (playerSelection === "rock" && computerSelection ==="paper"){
-            return "You lose";}
+        computerSelection=computerPlay();
+        playerSelection = prompt("Choose rock, paper, or scissors and input your choice.").toLowerCase();
+       if ( (playerSelection === "rock" && computerSelection ==="paper") || 
+       (playerSelection ==="paper" && computerSelection ==="scissors") || 
+            (playerSelection ==="scissors" && computerSelection ==="rock")){
+            return "You lose the computer chose " + computerSelection;}
             
-            else if (playerSelection === "rock" && computerSelection === "scissors"){
-                return "You win";}
-                
-                  
-            else if (playerSelection ==="paper" && computerSelection==="paper"){
-                    return "tie";}    
-            else if (playerSelection === "paper" && computerSelection==="rock"){
-             return "you win";}
-            else if (playerSelection ==="paper" && computerSelection ==="scissors"){
-                return "you lose";
-            }
-             else if (playerSelection ==="scissors" && computerSelection==="scissors"){
-                 return "you tie";
-             }
-             else if (playerSelection ==="scissors" && computerSelection ==="rock"){
-                 return "you lose";
-             }
-             else {return "you win";}
+            else if ( (playerSelection === "rock" && computerSelection === "scissors") 
+            || (playerSelection === "paper" && computerSelection==="rock") ||
+             (playerSelection ==="scissors" && computerSelection==="scissors")){
+                return "You win the computer chose "+computerSelection;}
+            
+                else return "you tie the computer chose " + computerSelection;
              
                 }
 
@@ -103,18 +94,37 @@ then a win needs to be allotted
 then whoever has 3 wins -- wins 
 output result */
 
+let playerScore;
+let computerScore;  
+let tie;
+    
 function game(){
+    playerScore;
+    computerScore;
     for( let i = 0; i <5; i++){
+       
         playRound()
-    }
+       
+     if (playRound()==="You win the computer chose "+computerSelection){
+            playerScore++; }
+        else if (playRound()==="You lose the computer chose " + computerSelection){
+            computerScore++;}
+        
+        }
+       
+
+    if (playerScore>computerScore){
+        return"you win "+ playerScore +""+computerScore}
+        else if
+        (computerScore>playerScore){ return "you lose "+playerScore +" "+computerScore;}
+        else if(computerScore===playerScore){return "you tied "+playerScore +" "+computerScore;}
+    
+    
+        
+    
 
 
 }
-
-}
-
-
-
 
 
 
