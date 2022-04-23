@@ -65,7 +65,7 @@ Make your function’s playerSelection parameter case-insensitive
 
    
     
-    function playRound(playerSelection, computerSelection){
+    function playRound(){
         computerSelection=computerPlay();
         playerSelection = prompt("Choose rock, paper, or scissors and input your choice.").toLowerCase();
        if ( (playerSelection === "rock" && computerSelection ==="paper") || 
@@ -99,25 +99,23 @@ let computerScore;
 let tie;
     
 function game(){
-    playerScore;
-    computerScore;
+    playerScore =0;
+    computerScore =0;
     for( let i = 0; i <5; i++){
+      let thisRound= playRound();
        
-        playRound()
-       
-     if (playRound()==="You win the computer chose "+computerSelection){
+     if (thisRound==="You win the computer chose "+computerSelection){
             playerScore++; }
-        else if (playRound()==="You lose the computer chose " + computerSelection){
+        else if (thisRound==="You lose the computer chose " + computerSelection){
             computerScore++;}
         
         }
        
-
     if (playerScore>computerScore){
-        return"you win "+ playerScore +""+computerScore}
+        return"you win "+ playerScore +" to "+computerScore}
         else if
-        (computerScore>playerScore){ return "you lose "+playerScore +" "+computerScore;}
-        else if(computerScore===playerScore){return "you tied "+playerScore +" "+computerScore;}
+        (computerScore>playerScore){ return "you lose "+playerScore +" to "+computerScore;}
+        else if(computerScore===playerScore){return "you tied "+playerScore +" to "+computerScore;}
     
     
         
